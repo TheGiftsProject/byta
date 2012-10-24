@@ -13,4 +13,4 @@ Template.hello.events({
 
 Meteor.startup(function() {
   console.log("aa");
-})
+});
