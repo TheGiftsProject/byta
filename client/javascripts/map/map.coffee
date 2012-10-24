@@ -8,7 +8,7 @@ class Map
   getGoogleMap: ->
     @map ||= new google.maps.Map(document.getElementById("map_canvas"), @mapOptions)
 
-  addMarker: (latLng)->
+  addMarker: (latLng) ->
     marker = new google.maps.Marker({
       position: latLng,
       map: @getGoogleMap(),
