@@ -9,3 +9,8 @@ Template.hello.events({
       console.log("You pressed the button");
   }
 });
+
+
+Meteor.startup(function() {
+  console.log("aa");
+})
