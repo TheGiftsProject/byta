@@ -7,13 +7,17 @@ Template.hello.events "click input": ->
   console.log "You pressed the button"  if typeof console isnt "undefined"
 
 Meteor.startup ->
-  map = new Map().getGoogleMap()
+  map = new Map()
 
-  google.maps.event.addListener(map, "click", (event) ->
-    console.log Items.insert({point: event.latLng})
+  google.maps.event.addListener(map.getGoogleMap(), "click", (event) ->
+    Items.insert({point: event.latLng})
   )
 
-  Items.insert(->
-    alert("inserted")
+  Items.find().observe(
+    added: (item)=>
+      console.log(item)
+      map.addMarker(new google.maps.LatLng(item.point.Ya, item.point.Za))
   )
+
+
 
