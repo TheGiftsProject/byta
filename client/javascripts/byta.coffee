@@ -1,5 +1,5 @@
 Meteor.startup ->
-  map = new Map()
+  map = new Map(Config.map.setup)
 
   map.addEventListener("click", (event) ->
     Items.insert({point: event.latLng})
