@@ -15,7 +15,6 @@ Meteor.startup ->
 
   Items.find().observe(
     added: (item)=>
-      console.log(item)
       map.addMarker(new google.maps.LatLng(item.point.Ya, item.point.Za))
   )
 
