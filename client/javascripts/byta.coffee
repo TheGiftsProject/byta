@@ -1,4 +1,12 @@
+Template.facebook_connect_button.events(
+  "click input": ->
+    Meteor.loginWithFacebook(->
+      console.log("done")
+    )
+)
+
 Meteor.startup ->
+  console.log(Meteor.user())
   map = new Map(Config.map.setup)
 
   map.addEventListener("click", (event) ->
