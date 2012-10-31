@@ -7,7 +7,7 @@ Template.hello.events "click input": ->
   console.log "You pressed the button"  if typeof console isnt "undefined"
 
 Meteor.startup ->
-#  console.log Meteor.user()
+  console.log Meteor.user()
   map = new Map()
 
   map.addEventListener("click", (event) ->
