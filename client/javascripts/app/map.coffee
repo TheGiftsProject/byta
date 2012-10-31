@@ -4,6 +4,7 @@ class Map
       center: new google.maps.LatLng(opts.lng, opts.ltd)
       zoom: opts.zoom
       mapTypeId: google.maps.MapTypeId.ROADMAP
+      mapTypeControl: false
     @map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions)
 
   addMarker: (latLng) ->

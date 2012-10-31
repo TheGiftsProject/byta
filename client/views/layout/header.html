@@ -1,9 +1,11 @@
 <template name="header">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-inner">
+            <div class="container actions">
+                    <img class="navbar-main-action add" src="/images/buttons/add.png">
+                    <img class="navbar-main-action search" src="/images/buttons/search.png">
+            </div>
             <div class="container">
-                <img class="navbar-main-action" src="/images/buttons/add.png">
-                <img class="navbar-main-action" src="/images/buttons/search.png">
                 <a class="brand" href="#">Byta</a>
                 {{> facebook_connect_button}}
                 <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
