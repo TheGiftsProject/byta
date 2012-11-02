@@ -1,0 +1,7 @@
+<template name="user_info">
+    {{#if currentUser}}
+        <span>{{currentUser.profile.facebook.name}}</span>
+    {{else}}
+        <input type="button" class="btn" value="Facebook Connect" />
+    {{/if}}
+</template>

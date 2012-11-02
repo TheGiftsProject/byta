@@ -1,9 +1,16 @@
-Template.facebook_connect_button.events(
+Template.user_info.events(
   "click input": ->
-    Meteor.loginWithFacebook(->
-      console.log("done")
+    Meteor.loginWithFacebook(
+      {requestPermissions: ['read_friendlists']},
+      facebookResult
     )
+
 )
+
+facebookResult = (result) ->
+  console.dir result
+
+
 
 Meteor.startup ->
   console.log(Meteor.user())
