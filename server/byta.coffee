@@ -10,7 +10,6 @@ Accounts.onCreateUser((options, user) ->
     params: {access_token: user.services.facebook.accessToken}
   })
 
-  console.dir result
   if !result.error && result.data
     user.profile.facebook = result.data
 
@@ -18,6 +17,4 @@ Accounts.onCreateUser((options, user) ->
 )
 
 Meteor.startup( ->
-  if Meteor.isServer
-    console.dir Meteor.users.findOne()
 )

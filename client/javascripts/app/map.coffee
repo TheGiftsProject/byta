@@ -1,11 +1,20 @@
 class Map
   constructor: (opts = {}) ->
-    mapOptions =
-      center: new google.maps.LatLng(opts.lng, opts.ltd)
-      zoom: opts.zoom
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    @map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions)
+    @mapOptions =
+      center: new google.maps.LatLng(-33, 151)
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      zoom: 13,
+      zoomControl: true,
+      zoomControlOptions:
+        style: google.maps.ZoomControlStyle.SMALL
+    @
 
+  render: (el)->
+    if el.jquery
+      el = el.get(0)
+    console.dir @mapOptions
+    @map = new google.maps.Map(el, @mapOptions)
+    @
   addMarker: (latLng) ->
     marker = new google.maps.Marker({
       position: latLng,
