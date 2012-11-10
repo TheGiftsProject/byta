@@ -6,14 +6,17 @@ Template.user_info.events(
 Meteor.startup ->
   map = new Map().render($("#map_canvas"))
 
-  if Modernizr.geolocation
-    navigator.geolocation.getCurrentPosition(((p)=>positionSuccess(p)), ((e)=>positionError(e)), { enableHighAccuracy: true })
-
-  positionSuccess = (position) ->
-    console.dir position
+  positionSuccess = (position) =>
+    map.setMyLocation(new google.maps.LatLng(position.coords.latitude, position.coords.longitude))
+#    map.addMarker(new google.maps.LatLng(position.coords.latitude, position.coords.longitude))
 
   positionError = (error) ->
     console.dir error
+
+  if Modernizr.geolocation
+    navigator.geolocation.getCurrentPosition(positionSuccess, ((e)=>positionError(e)), { enableHighAccuracy: true })
+
+
 #  map.addEventListener("click", (event) ->
 #    Items.insert({point: event.latLng})
 #  )
