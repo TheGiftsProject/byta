@@ -1,5 +1,3 @@
-@nav-height: 40px;
-
 html {
   height: 100%
 }
@@ -8,11 +6,14 @@ body {
   margin: 0px;
   padding: 0px;
   height: 100%;
-  direction: rtl;
-  .content {
-    width: 100%;
-    height: 100%;
-    padding-top: @nav-height;
+  .fill {
+    top: 40px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    width: auto;
+    height: auto;
   }
 }
 

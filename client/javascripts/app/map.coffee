@@ -1,12 +1,15 @@
 class Map
   constructor: (opts = {}) ->
     @mapOptions =
-      center: new google.maps.LatLng(-33, 151)
+      center: new google.maps.LatLng(32.074231, 34.785973)
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       zoom: 13,
-      zoomControl: true,
       zoomControlOptions:
         style: google.maps.ZoomControlStyle.SMALL
+      mapTypeControl: false
+      panControl: false
+      zoomControl: false
+
     @
 
   render: (el)->
