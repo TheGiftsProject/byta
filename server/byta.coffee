@@ -17,4 +17,5 @@ Accounts.onCreateUser((options, user) ->
 )
 
 Meteor.startup( ->
+  console.log(Meteor.absoluteUrl('_oauth/facebook?close'))
 )
